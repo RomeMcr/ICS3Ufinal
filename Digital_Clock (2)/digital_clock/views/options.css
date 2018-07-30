@@ -1,0 +1,68 @@
+h1 {
+    display: block;
+    font-size: 90px;
+    font-weight: bold;
+    font-family: Times New Roman;
+}
+ input{
+ 	font-size: 25px;
+}
+tr{
+ 	font-size: 25px;
+ 	color: white;
+}
+input[type='checkbox'] {
+    -webkit-appearance:none;
+    width:30px;
+    height:30px;
+    background:white;
+    border-radius:5px;
+    border:2px solid #555;
+}
+
+input[type='color']{
+	width:90px;
+    height:50px;
+    padding: 10px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin:10px;
+    background-color:  #93cad8;
+
+}
+
+input[type='time']{
+    padding: 10px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin:10px;
+    background-color:  #93cad8;
+
+}
+
+input[type='text']{
+    padding: 10px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin:10px;
+    background-color:  #93cad8;
+
+
+}
+
+ button{
+ 	font-size: 40px;
+ 	font-style: white;
+	background-color:  #66bfd6;
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin:10px
+    
+}
+
