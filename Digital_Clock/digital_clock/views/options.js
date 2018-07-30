@@ -34,7 +34,3 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('alarm_on').addEventListener('click', SetState);
 });
-
-document.addEventListener('DOMContentLoaded', function () {
-  document.getElementById('am_pm').addEventListener('click', ChangeAmPm);
-});
