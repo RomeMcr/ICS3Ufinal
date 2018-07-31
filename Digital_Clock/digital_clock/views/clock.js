@@ -63,13 +63,20 @@
     document.getElementById('time').innerHTML = time[0];
     document.getElementById('am_pm').innerHTML = time[1];
     time = formatTime( date.getHours(), date.getMinutes(), -1);
-    document.title = time[0] + " " + time[1] + " Digital Clock CE-7";
+    document.title = time[0] + " " + time[1] + " Digital Clock ";
  
     str = format2(date.getSeconds());
     document.getElementById('sec').innerHTML = str;
     
-    str = months[ date.getMonth() ] +" "+ date.getDate() +" "+ date.getFullYear();
+    function run(){
+      
+
+
+    }
+    str = months[ run()] +" "+  date.getFullYear()+" "+ date.getDate();
     document.getElementById('date').innerHTML = str;
+    
+
     str = dayOfWeek[ date.getDay() ]; 
     document.getElementById('day_of_week').innerHTML = str;    
 
@@ -101,7 +108,7 @@
         document.getElementById('alarm').innerHTML = "Alarm: "+time[0]+" "+time[1];
       }
     }else{
-      document.getElementById('alarm').innerHTML = "";
+      document.getElementById('alarm').innerHTML = "Alarm:";
     }
     
     document.getElementById('tableObj').style.color = GetIni("font_color");

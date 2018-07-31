@@ -1,4 +1,5 @@
-  function IsSet(varname){
+
+    function IsSet(varname){
     return typeof varname != "undefined";
   }
   
