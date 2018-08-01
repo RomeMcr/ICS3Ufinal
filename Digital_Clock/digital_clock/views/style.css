@@ -2,7 +2,7 @@ body {
   color: #0087ff;
   background-color: #80d4ea;
   font-family: arial;
-  font-size: 11px;
+  font-size: 1px;
   margin: 0;
 }
 
@@ -15,28 +15,22 @@ A{
    font-family:  courier, monospace;
    font-size:20px;
    left: 1000px;
-   top: 10px;
+   top: 0px;
 
 }
 
-
-
-body {
-    background-color: #80d4ea;
-}
 
 #clock {
-    height: 100px;
-    width: 800px;
+    height: auto;
+    width: auto;
     margin: auto;
-    position: absolute;
-    top: 0; left: 0; bottom: 0; right: 0;
-    padding-top: 70px;
+    padding-top: 80px;
     font-family: courier, monospace;
     text-align: center;
     color: white;
-    font-size: 100px;
+    font-size: 60px;
 }
+
 
 @font-face {
   font-family: digital-7 mono;
@@ -44,8 +38,9 @@ body {
 }
 
  button{
-  font-size: 40px;
+  font-size: 20px;
   font-style: white;
+  font-family: courier, monospace;
   background-color:  #66bfd6;
   color: #FFFFFF;
   padding: 10px;
@@ -55,4 +50,6 @@ body {
   margin:10px
     
 }
+
+
 

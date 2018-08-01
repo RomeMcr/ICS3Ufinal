@@ -5,15 +5,15 @@ h1 {
     font-family: Times New Roman;
 }
  input{
- 	font-size: 25px;
+    font-size: 25px;
 }
 tr{
- 	font-size: 25px;
- 	color: white;
+    font-size: 25px;
+    color: white;
 }
 
 input[type='color']{
-	width:90px;
+    width:90px;
     height:50px;
     padding: 10px;
     border-radius: 5px;
@@ -45,10 +45,11 @@ input[type='text']{
 
 }
 
+
  button{
- 	font-size: 40px;
- 	font-style: white;
-	background-color:  #66bfd6;
+    font-size: 40px;
+    font-style: white;
+    background-color:  #66bfd6;
     color: #FFFFFF;
     padding: 10px;
     border-radius: 10px;
@@ -57,4 +58,23 @@ input[type='text']{
     margin:10px
     
 }
+
+select{
+    font-size: 40px;
+    font-style: white;
+    background-color:  #93cad8;
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin:10px
+    
+
+}
+
+
+
+
+
 

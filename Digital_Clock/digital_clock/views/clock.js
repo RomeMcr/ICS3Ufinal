@@ -57,7 +57,8 @@
   function OnTimer(){
     am_pm = GetIni("am_pm");    
         
-    date = new Date();    
+    date = new Date();
+       
     
     time = formatTime( date.getHours(), date.getMinutes(), date.getSeconds());
     document.getElementById('time').innerHTML = time[0];
@@ -65,20 +66,21 @@
     time = formatTime( date.getHours(), date.getMinutes(), -1);
     document.title = time[0] + " " + time[1] + " Digital Clock ";
  
+     
     str = format2(date.getSeconds());
     document.getElementById('sec').innerHTML = str;
     
-    function run(){
-      
-
-
-    }
-    str = months[ run()] +" "+  date.getFullYear()+" "+ date.getDate();
-    document.getElementById('date').innerHTML = str;
+    str = months[ date.getMonth() ] +" "+ date.getDate() +" "+ date.getFullYear();
+    //document.getElementById('date').innerHTML = str;
+    str = dayOfWeek[ date.getDate() ]; 
+    document.getElementById('day_of_week').innerHTML = str; 
     
 
-    str = dayOfWeek[ date.getDay() ]; 
-    document.getElementById('day_of_week').innerHTML = str;    
+    //document.getElementById('date').innerHTML = str;
+   
+
+    var str2 = GetIni("dateformatstring");
+    document.getElementById('date').innerHTML = str2;  
 
     alarm_on = GetIni("alarm_on");    
     if( CheckInt(GetIni("alarm_hour"), 0, 23) && CheckInt(GetIni("alarm_min"), 0, 59) ){
@@ -90,25 +92,32 @@
        
     if( alarm_on ){
       time = formatTime( alarm_hour, alarm_min, -1);
-           
-      if( alarm_go == 0 && alarm_hour == date.getHours() && alarm_min == date.getMinutes() && date.getSeconds() == 0){
+      document.getElementById('alarm').innerHTML = "Alarm: "+time[0]+" "+time[1];     
+      if( alarm_hour == date.getHours() && alarm_min == date.getMinutes() && date.getSeconds() == 0){
         alarm_go = 1;
+        alarm_duration = 0;
         //notify_message         
       }
       
-      if( alarm_go && date.getSeconds() == 0 ){
-        var snd = new Audio("rooster.wav");        
-        snd.play();                    
-      }
-      
-      if( alarm_go && (date.getSeconds()&1)){              
-        document.getElementById('alarm').innerHTML = "Alarm: ";
-        document.title = "Alarm!";        
-      }else if( alarm_on ){
+      if( alarm_go == 1 ){
+        if ( alarm_duration == 1){
+          alert( "alarm_desc");
+        }
+        document.title = "Alarm!";    
         document.getElementById('alarm').innerHTML = "Alarm: "+time[0]+" "+time[1];
+        alarm_duration  = alarm_duration + 1;
+        if ( alarm_duration == 10 ){
+          alarm_go = 0;
+          localStorage["alarm_on"] = ""
+          alarm_on = 0;
+          alarm_duration = 0;
+          document.getElementById('alarm').innerHTML = "";
+        }
       }
-    }else{
-      document.getElementById('alarm').innerHTML = "Alarm:";
+    }
+    if (  alarm_on != 1 ){
+      document.getElementById('alarm').innerHTML = "";
+    }
     }
     
     document.getElementById('tableObj').style.color = GetIni("font_color");
@@ -116,18 +125,18 @@
     for( var i = 0, numAnchors = anchors.length; i < numAnchors; i++ ) {
       anchors[ i ].style.color = localStorage["font_color"];
     }                       
-  }
+  
  
   function OnClick(){
-    localStorage["alarm_on"] = "";
-    alarm_go = 0;
+    //localStorage["alarm_on"] = "";
+    //alarm_go = 0;
   }
   
   function Init(){    
     document.getElementById('options').onclick = function (){
-      window.open("options.html")
+      window.open("options.html", "_self")
       return false;
-    };    
+    };
     OnTimer();
     OnResize();        
     setInterval( OnTimer, 1000);
