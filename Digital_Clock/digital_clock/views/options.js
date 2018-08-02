@@ -16,9 +16,16 @@ function save() {
     
   localStorage["alarm_desc"] = document.getElementById("alarm_desc").value;
 
+
   localStorage["first_dropdown"] = document.getElementById("first").value;
   localStorage["second_dropdown"] = document.getElementById("second").value;
   localStorage["third_dropdown"] = document.getElementById("third").value;
+
+
+  //Update the date on the screen
+ //document.getElementById("time").innerHTML = new Date().toLocaleString("en-US", {timeZone: str});//make the varable date equel to new date()
+ 
+
 
   var cdate = new Date();
   var i = 1;

@@ -20,7 +20,7 @@
   }
 
   function format2(i) {
-    return i < 10 ? "0"+i : i;//return i is smaller than 10 then "0" plus i else just i 
+    return i < 10 ? "0"+i : i;//return i is smaller than 10 then "0" plus i else just i (minutes)
   }
   
   function formatTime( hour, min, sec) {  
@@ -54,77 +54,136 @@
       //returns the min is last then num and/or num is smmaller than max
     }    
   }
+   // function run() {
+    // body...
+   
+   //// date = new Date(date);
+    //var choice = "";
+   // var str;
+   // choice = GetIni("time_dropdown");
+
+    // switch(choice) {
+    // case "Toronto":
+   //    str = "America/Toronto";
+    //   break;
+    //  case "Vancouver":
+    //   str = "America/Vancouver";
+    //   break;
+   //   case "Winnipeg":
+   //    str = "America/Winnipeg";
+    //   break;
+   //  case "Edmonton":
+    //   str = "America/Edmonton";
+    //   break;
+    //  case "Halifax":
+    //   str = "America/Halifax";
+    //   break;
+    //  case "St_John":
+    //   str = "America/St_Johns";
+    //   break;
+   // }
+  //   var run = document.getElementById("time").innerHTML = new Date().toLocaleString("en-US", {timeZone: str});//make the varable date equel to new date()
+
+ //}
+  function OnTimer(){ //get the date 
+    am_pm = GetIni("am_pm");
+
+    date = new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles" });
+    date = new Date(date);   
     
-  function OnTimer(){
-    am_pm = GetIni("am_pm");    
-        
-    date = new Date();
-       
-    
-    time = formatTime( date.getHours(), date.getMinutes(), date.getSeconds());
+    function Toronto(){
+      new Date().toLocaleString("en-US", {timeZone: "America/Toronto"});//make the varable date equel to new date()
+    }
+
+    function Vancouver(){
+      new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"});//make the varable date equel to new date()
+    }
+
+    function Winnipeg(){
+      new Date().toLocaleString("en-US", {timeZone: "America/Winnipeg"});//make the varable date equel to new date()
+    }
+
+    function Edmonton(){
+      new Date().toLocaleString("en-US", {timeZone: "America/Edmonton"});//make the varable date equel to new date()
+    }
+
+
+    function Halifax(){
+      new Date().toLocaleString("en-US", {timeZone: "America/Halifax"});//make the varable date equel to new date()
+    }
+
+
+    function St_John(){
+      new Date().toLocaleString("en-US", {timeZone: "America/St_Johns"});//make the varable date equel to new date()
+    }
+
+
+  
+
+  time = formatTime( date.getHours(), date.getMinutes(), date.getSeconds());//print out the time and hours goes frist then minutes and then second
     document.getElementById('time').innerHTML = time[0];
     document.getElementById('am_pm').innerHTML = time[1];
     time = formatTime( date.getHours(), date.getMinutes(), -1);
-    document.title = time[0] + " " + time[1] + " Digital Clock ";
+    document.title = time[0] + " " + time[1] + " Digital Clock ";//the title so the time shows up on the title
  
      
     str = format2(date.getSeconds());
-    document.getElementById('sec').innerHTML = str;
+    document.getElementById('sec').innerHTML = str;//the minute will work based on the second
     
     str = months[ date.getMonth() ] +" "+ date.getDate() +" "+ date.getFullYear();
     //document.getElementById('date').innerHTML = str;
     str = dayOfWeek[ date.getDate() ]; 
-    document.getElementById('day_of_week').innerHTML = str; 
+    document.getElementById('day_of_week').innerHTML = str; //day of the week in the string
     
 
     //document.getElementById('date').innerHTML = str;
    
 
     var str2 = GetIni("dateformatstring");
-    document.getElementById('date').innerHTML = str2;  
+    document.getElementById('date').innerHTML = str2;//date formating string  
 
-    alarm_on = GetIni("alarm_on");    
+    alarm_on = GetIni("alarm_on");  //Open the ini file and retrieve the data as a character variable.
     if( CheckInt(GetIni("alarm_hour"), 0, 23) && CheckInt(GetIni("alarm_min"), 0, 59) ){
       alarm_hour = parseInt( GetIni("alarm_hour") );
-      alarm_min = parseInt( GetIni("alarm_min") );
+      alarm_min = parseInt( GetIni("alarm_min") );//if a person set the alarm then show the time
     }else{
-      alarm_on = 0;
+      alarm_on = 0;//else the alarm equel to 0 means the alarm is off
     }
        
     if( alarm_on ){
       time = formatTime( alarm_hour, alarm_min, -1);
-      document.getElementById('alarm').innerHTML = "Alarm: "+time[0]+" "+time[1];     
+      document.getElementById('alarm').innerHTML = "Alarm: "+time[0]+" "+time[1]; //if the alarm is on then show "Alarm: 9:30"or whatever time you set to    
       if( alarm_hour == date.getHours() && alarm_min == date.getMinutes() && date.getSeconds() == 0){
         alarm_go = 1;
         alarm_duration = 0;
         //notify_message         
       }
       
-      if( alarm_go == 1 ){
+      if( alarm_go == 1 ){ //if alarm_go equel to 1 (ture)
         if ( alarm_duration == 1){
-          alert( "alarm_desc");
+          alert( "alarm_desc");//if alarm duration equel to 1 (meaning if the time equel to the time u set your alarm to )then alert the message
         }
         document.title = "Alarm!";    
-        document.getElementById('alarm').innerHTML = "Alarm: "+time[0]+" "+time[1];
+        document.getElementById('alarm').innerHTML = "Alarm: "+time[0]+" "+time[1];//an then the title will say "Alarm!" and it will flash too
         alarm_duration  = alarm_duration + 1;
-        if ( alarm_duration == 10 ){
+        if ( alarm_duration == 10 ){//after the pop up shows the alarm will dispear in 10 second
           alarm_go = 0;
           localStorage["alarm_on"] = ""
           alarm_on = 0;
           alarm_duration = 0;
-          document.getElementById('alarm').innerHTML = "";
+          document.getElementById('alarm').innerHTML = "";//then it reset the alarm
         }
       }
     }
-    if (  alarm_on != 1 ){
-      document.getElementById('alarm').innerHTML = "";
+    if (  alarm_on != 1 ){ //if the alarm not equel to 
+      document.getElementById('alarm').innerHTML = "";//
     }
     }
     
     document.getElementById('tableObj').style.color = GetIni("font_color");
     var anchors = document.getElementsByTagName( 'A' );
     for( var i = 0, numAnchors = anchors.length; i < numAnchors; i++ ) {
-      anchors[ i ].style.color = localStorage["font_color"];
+      anchors[ i ].style.color = localStorage["font_color"];//change the font colour 
     }                       
   
  
@@ -134,20 +193,20 @@
   }
   
   function Init(){    
-    document.getElementById('options').onclick = function (){
-      window.open("options.html", "_self")
-      return false;
+    document.getElementById('options').onclick = function (){//when u click  the alarm setting button 
+      window.open("options.html", "_self")//open the options page in the same tab
+      return false;//then equel to false
     };
     OnTimer();
     OnResize();        
-    setInterval( OnTimer, 1000);
-    document.addEventListener('DOMContentLoaded', function () {
+    setInterval( OnTimer, 1000);//1000 ms = 1 second. calls the time function at specified intervals (in milliseconds).
+    document.addEventListener('DOMContentLoaded', function () {// is fired when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading. 
       document.addEventListener('click', OnClick);
     });        
   }
   
-  window.onresize = OnResize;    
-  dayOfWeek = Array( "Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
-  months = Array("January","February","March","April","May","June","July","August","September","October","November","December");
-  alarm_go = 0;  
+  window.onresize = OnResize;  //resize the browser window to display the windows height and width.  
+  dayOfWeek = Array( "Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");//dsy of the week 
+  months = Array("January","February","March","April","May","June","July","August","September","October","November","December");// just ingnor this line
+  alarm_go = 0;  //then the alarm equel to 0
   Init();    

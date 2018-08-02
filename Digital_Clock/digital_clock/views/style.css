@@ -1,4 +1,4 @@
-body {
+body {/* style for body*/
   color: #0087ff;
   background-color: #80d4ea;
   font-family: arial;
@@ -6,21 +6,21 @@ body {
   margin: 0;
 }
 
-A{
+A{/* style for font colour, but you can change it */
   color: #0087ff;
 }
 
-.settings{
+.settings{/*style for the class setting which is the button*/
    position: absolute;
    font-family:  courier, monospace;
    font-size:20px;
-   left: 1000px;
+   left: 1100px;
    top: 0px;
 
 }
 
 
-#clock {
+#clock {/*style for hours minute and second*/
     height: auto;
     width: auto;
     margin: auto;
@@ -32,12 +32,12 @@ A{
 }
 
 
-@font-face {
+@font-face {/**/
   font-family: digital-7 mono;
   src: url(digital-7_mono.ttf);
 }
 
- button{
+ button{/**/
   font-size: 20px;
   font-style: white;
   font-family: courier, monospace;

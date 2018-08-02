@@ -6,13 +6,15 @@
 <body STYLE='background-color: #80d4ea;' align="center" >
   <h1 style="color:white;"  >Options for Digital Clock </h1>
   <TABLE align="center">
+
+
   <TR>
   <TD>
   The order of date, month and year:
   </TD>
   <TD>
-  <select id="first" onchange="run()">
-  <option value="1">Month</option>
+  <select id="first">
+  <option value="1" selected="selected">Month</option>
   <option value="2">Year</option>
   <option value="3">Day</option>
   </select>
@@ -20,12 +22,12 @@
   <select id="second" >
   <option value="1">Month</option>
   <option value="2">Year</option>
-  <option value="3">Day</option>
+  <option value="3" selected="selected">Day</option>
   </select>
 
   <select id="third">
   <option value="1">Month</option>
-  <option value="2">Year</option>
+  <option value="2" selected="selected">Year</option>
   <option value="3">Day</option>
   </select>
 
@@ -63,6 +65,7 @@
   </TD>
   <TD>
     <input id="alarm_desc" type="text" maxlength="255" size="25">
+
   </TD>
   </TR>
 
