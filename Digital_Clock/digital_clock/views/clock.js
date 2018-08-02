@@ -1,6 +1,6 @@
 
 
-  function OnResize(){
+  function OnResize(){//just make the style of the objects
     obj = document.getElementById('time');
     obj.style.fontSize = Math.max( 8, document.documentElement.clientWidth/3 )+"px";
     obj = document.getElementById('day_of_week');
@@ -20,37 +20,38 @@
   }
 
   function format2(i) {
-    return i < 10 ? "0"+i : i;
+    return i < 10 ? "0"+i : i;//return i is smaller than 10 then "0" plus i else just i 
   }
   
   function formatTime( hour, min, sec) {  
     am_pm_text = "";    
     if( am_pm ){
       if( hour >= 12 ){
-        hour -= 12;
+        hour -= 12;//if hours is bigger or equel to 12 then display pm
         am_pm_text = " PM";
       }else{
-        am_pm_text = " AM";
+        am_pm_text = " AM";//else display am
       }
       if( hour == 0 )
-        hour = 12;      
+        hour = 12; //if hours equel equels 0 then hour equel to 12     
     }
     delim = ":";
     if( sec != -1 && (sec&1)) 
-      delim = " ";
+      delim = " ";//this make the ":" appear and dispear just like a real alarm clock would do
     
-    str = "" + hour + delim + format2(min);
+    str = "" + hour + delim + format2(min) ; //make a string and it display the time 
     ret = Array( str, am_pm_text);
-    return ret;
+    return ret; // then return
     
   }
 
   function CheckInt( num, min, max ){
     if( isNaN( num ) ){
-      return false;
+      return false;//if isNaN num then return equel to false
     }else{
       num = parseInt( num );
-      return min <= num && num <= max;
+      return min <= num && num <= max;//else num equel to The parseInt() function parses a string and 
+      //returns the min is last then num and/or num is smmaller than max
     }    
   }
     
