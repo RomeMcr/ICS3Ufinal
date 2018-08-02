@@ -2,11 +2,11 @@
 the final project for my course
 
 # What the project does
-##Homepage
+## Homepage
 - it tell you the time, date, and the day of the week
 - you can set a alarm
 
-##Option setting page
+## Option setting page
 - you can set the order you want your day, month and year to be 
 - you can change the colour of the font at homepage
 - you have to check the check box before you set your alarm
