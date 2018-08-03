@@ -1,0 +1,55 @@
+body {/* style for body*/
+  color: #0087ff;
+  background-color: #80d4ea;
+  font-family: arial;
+  font-size: 1px;
+  margin: 0;
+}
+
+A{/* style for font colour, but you can change it */
+  color: #0087ff;
+}
+
+.settings{/*style for the class setting which is the button*/
+   position: absolute;
+   font-family:  courier, monospace;
+   font-size:20px;
+   left: 1100px;
+   top: 0px;
+
+}
+
+
+#clock {/*style for hours minute and second*/
+    height: auto;
+    width: auto;
+    margin: auto;
+    padding-top: 80px;
+    font-family: courier, monospace;
+    text-align: center;
+    color: white;
+    font-size: 60px;
+}
+
+
+@font-face {/*the font style its a robotic alarm font but i did not download the font */
+  font-family: digital-7 mono;
+  src: url(digital-7_mono.ttf);
+}
+
+ button{/*style for the button*/
+  font-size: 20px;
+  font-style: white;
+  font-family: courier, monospace;
+  background-color:  #66bfd6;
+  color: #FFFFFF;
+  padding: 10px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  margin:10px
+    
+}
+
+
+

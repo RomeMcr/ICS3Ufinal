@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+  <title>Digital Clock Options</title> <!--the title of the options page -->
+</head>
+<body STYLE='background-color: #80d4ea;' align="center" >
+  <h1 style="color:white;"  >Options for Digital Clock </h1><!--the head of the options page -->
+  <TABLE align="center">
+
+
+  <TR>
+  <TD>
+  The order of date, month and year:<!-- the drop down box for the order of the day month and year-->
+  </TD>
+  <TD>
+  <select id="first"><!--the first drop down box  -->
+  <option value="1" selected="selected">Month</option><!-- defult so u dont have to change it every time-->
+  <option value="2">Year</option>
+  <option value="3">Day</option>
+  </select>
+
+  <select id="second" ><!-- the second drop down box -->
+  <option value="1">Month</option>
+  <option value="2">Year</option>
+  <option value="3" selected="selected">Day</option><!-- default-->
+  </select>
+
+  <select id="third"><!--the third drop down box -->
+  <option value="1">Month</option>
+  <option value="2" selected="selected">Year</option><!-- default-->
+  <option value="3">Day</option>
+  </select>
+
+  <TR>
+  <TD >    
+  Font color:<!--the font colour -->
+  </TD>
+  <TD> 
+  <input id="font_color" type="color"><!--input the colur box -->
+  </TD>
+  </TR>    
+  <TR>
+  <TD>    
+  <label>
+    <input id="alarm_on" type="checkbox">Alarm<!--the check box for the alarm -->
+  </label>
+  </TD>
+  <TD>
+  </TD>
+  </TR>
+      
+  <TR>
+  <TD>
+    Time:
+  </TD>
+  <TD>
+    <input type="time" id="alarm_time"><!-- the choosing time input-->
+  </TD>
+  </TR>
+  
+
+  <TR>
+  <TD size="30px">
+    Description:<!--descrption-->
+  </TD>
+  <TD>
+    <input id="alarm_desc" type="text" maxlength="255" size="25"><!-- the input for the  description-->
+
+  </TD>
+  </TR>
+
+  </TABLE>
+  </P>
+  
+  <button id="OK" > Save </button><!--the save button that will save the changes u set -->
+  <script src='common.js'></script><!-- script the common.js file just incase-->
+  <script src='options.js'></script><!-- script the options.js file just incase--->
+  <link rel="stylesheet" href="options.css"><!--CSS file -->
+</body>
+</html>

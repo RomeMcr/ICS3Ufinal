@@ -1,29 +1,64 @@
 <!DOCTYPE html>
 <html>
-<head> 
-    <title>Coder</title>
-    <meta charset="utf-8">
-    <!-- Standard Coder Includes -->
-    <script>
-        var appname = "{{app_name}}"; //app name (id) of this app
-        var appurl = "{{&app_url}}";
-        var staticurl = "{{&static_url}}"; //base path to your static files /static/apps/yourapp
-    </script>
-    <link href="/static/apps/coderlib/css/index.css" media="screen" rel="stylesheet" type="text/css"/>
-    <script src="/static/common/js/jquery.min.js"></script>
-    <script src="/static/common/ace-min/ace.js" type="text/javascript" charset="utf-8"></script>
-    <script src="/static/apps/coderlib/js/index.js"></script>
-    <script>
-        Coder.addBasicNav();
-    </script>
-    <!-- End Coder Includes -->
-
-    <!-- This app's includes -->
-    <link href="{{&static_url}}/css/index.css" media="screen" rel="stylesheet" type="text/css"/>
-    <script src="{{&static_url}}/js/index.js"></script>
-    <!-- End apps includes -->
+<head>
+<meta charset="utf-8">
+<title>Digital Clock</title><!--the title is called "Digital clock"-->
+<LINK HREF="./style.css" REL="stylesheet" TYPE="text/css"> <!--find the CSS file-->
 </head>
-<body>
-    <div id='clock'></div>
+
+<body >
+
+  <table id='tableObj' width="50%" align="center"  style='font-family:Times New Roman;' ><!--the object in the table the alarm, the time, the second the am or pm, date and the day of the week-->
+  <tr>
+  <td><!---->
+    <a id='alarm' href="options.html" width="75%"></a><!--the alarm and it bring u to the options setting-->
+  </td>
+  </tr>
+
+  <tr>
+  <td  COLSPAN='2' align="center"><!--An HTML table with a table cell that spans two columns:-->
+  <NOBR> 
+  <span id='time'></span><!--hours and min-->
+  <span id='sec'></span><!--the second-->
+  <span  id='am_pm' align="right"><!--am and pm-->
+  </span>
+  </NOBR>  
+  </td>
+  </tr>
+
+  <tr>
+  <td  id='date'><!--the date-->
+  </td>
+  <td id='day_of_week' align="right"><!--day of the week-->
+  </td>
+  </tr>
+  </table>
+
+
+  <tr>
+  <td>
+  <select id = "time_dropdown" >
+  <option value="0" selected="selected">Toronto (EDT)</option>
+  <option value="1">Vancouver (PDT)</option> 
+  <option value="2">Winnipeg (CDT)</option>
+  <option value="3">Edmonton (MDT)</option>
+  <option value="4">Halifax, NS (ADT)</option> 
+  <option value="5">St. John's (NDT)</option> 
+  </select>
+  </td>
+  </tr>
+
+  <div id='homePage' class="settings" ><!--made a class name setting -->
+    <br>
+    <button id='options' href="options.html" > Alarm Setting</button><!--when u click on the button is going to bring u to the options.js page-->
+  </div>
+    
+  
+
+
+  <script language="JavaScript" src="common.js"></script>  <!--script common.js-->
+  <script language="JavaScript" src="clock.js"></script><!--script clock.js-->
+  <script language="CSS" src = "style.css"></script> <!--script style.css-->
 </body>
+
 </html>
