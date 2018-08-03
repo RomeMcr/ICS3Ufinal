@@ -25,6 +25,9 @@ the final project for my course
   it will say underfined if it can not identlfy a varible, and it set the varibles to false, also the local storge 
 
 # How to compile the project
+clone the repostiroy 
+npm install
+gul serve
 
 # How to test the project
 1. Downloard the files
